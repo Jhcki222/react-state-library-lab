@@ -1,0 +1,7 @@
+Phase0: #0-1. 리액트 프로젝트 생성, Tailwind 설치
+
+	# Vite 빌드툴을 활용하여 프로젝트 생성
+	npm create vite@latest react-todo-js -- --template react
+
+	# Tailwind 설치(https://tailwindcss.com/docs/guides/vite)
+	링크 내 02번[Install Tailwind CSS]부터 진행
