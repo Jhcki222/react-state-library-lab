@@ -2,24 +2,19 @@ import { TODO_CATEGORY_ICON } from '@/constants/icon'
 import { useState } from 'react';
 const TodoForm = ({ onAdd, onClose }) => {
     
-    // 각각의 입력폼을 개별 상태로 관리
     const [title, setTitle] = useState('');
     const [summary, setSummary] = useState('');
-    const [category, setCategory] = useState('TODO'); // 카테고리의 기본값은 TODO
+    const [category, setCategory] = useState('TODO');
 
-    // 할일 등록 버튼을 눌렀을 때 동작시킬 핸들러
     const addTodoHandler = () => {
-        // 등록할 할일 객체
         const todo = { 
             title: title, 
-            summary, // 프로퍼티와 변수의 이름이 같을 경우 title로만 작성해도 됨
+            summary,
             category
         }
 
-        // App.jsx로 전달
-        onAdd(todo); // App.jsx에서 전달받은 함수(addTodoHandler)를 호출
+        onAdd(todo);
 
-        // 모달창 닫기
         onClose();
     }
 

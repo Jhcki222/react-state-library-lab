@@ -1,8 +1,3 @@
-// 파일 이름 === 컴포넌트 이름이 동일(Single File Component)
-
-/*
-메인페이지에서 사용할 전체 기본 레이아웃이 되는 컴포넌트
- */
 const DefaultLayout = ({ children }) => {
 
     return (
@@ -14,4 +9,4 @@ const DefaultLayout = ({ children }) => {
     )
 }
 
-export default DefaultLayout; // 외부에서 import해서 쓸 수 있도록 내보내기(export)
+export default DefaultLayout;

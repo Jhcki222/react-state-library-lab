@@ -2,8 +2,6 @@ import React from 'react'
 import { TODO_CATEGORY_ICON } from '@/constants/icon';
 import IconButton from '../ui/IconButton';
 
-
-// TodoBody에서 todo라는 이름의 props를 전달(내려줬음)
 const TodoItem = ({ todo }) => {
   
   return (
