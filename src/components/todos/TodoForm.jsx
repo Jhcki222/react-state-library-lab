@@ -10,11 +10,14 @@ const TodoForm = ({ actionTitle, buttonText, onAction, onClose, todo }) => {
 
     const todoActionHandler = () => {
         const updateTodo = {
-            id: todo.id,
             title: title,
             summary,
             category
         }
+
+        if (!isNewTodoForm) // 할일 수정일 경우, 할일 객체에 id 추가
+            updateTodo.id = todo.id;
+        //  할일 추가일 경우, App.jsx(addTodoHandler)에서 자체적으로 UUID 추가하기 때문에 생략
 
         onAction(updateTodo);
 
