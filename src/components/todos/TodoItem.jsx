@@ -5,7 +5,7 @@ import { createPortal } from 'react-dom';
 import Modal from '@/components/ui/Modal'
 import TodoForm from './TodoForm'
 
-const TodoItem = ({ todo, onUpdate }) => {
+const TodoItem = ({ todo, onUpdate, onDelete }) => {
 
   const [openModal, open] = useState(false);
   
@@ -19,9 +19,8 @@ const TodoItem = ({ todo, onUpdate }) => {
             </div>
         </div>
         <div className="flex items-center gap-1">
-            {/* IconButton은 커스텀 컴포넌트이기 때문에 onClick만 쓸 경우, 이벤트명이아닌 props 이름으로 인식함*/}
             <IconButton onClick={() => open(true)} icon={'✏️'}/>
-            <IconButton icon={'🗑'} />
+            <IconButton onClick={() => onDelete(todo.id)} icon={'🗑'} />
         </div>
         {openModal && createPortal(
           <Modal onClose={() => open(false)}>
