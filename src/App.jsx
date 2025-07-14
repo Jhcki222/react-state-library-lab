@@ -40,6 +40,19 @@ function App() {
     setTodos(updatedTodos);
   }
 
+  /**
+   * 2. 할일 수정 기능
+   * @param {*} updateTodo 새롭게 갱신할 할일 객체
+   */
+  const updateTodoHandler = (updateTodo) => {
+    console.log(updateTodo);
+    
+    console.log('ttt');
+    
+    const updatedTodos = todos.map(todo => todo.id === updateTodo.id ? updateTodo : todo);
+    setTodos(updatedTodos);
+  }
+
   return (
         <DefaultLayout>
           <header>
@@ -50,7 +63,7 @@ function App() {
           </header>
           <section className='max-w-xl m-4 mx-auto'>
             <TodoHeader onAdd={addTodoHandler}/>
-            <TodoBody todos={todos}/>
+            <TodoBody todos={todos} onUpdate={updateTodoHandler}/>
           </section>
         </DefaultLayout>
   )

@@ -17,7 +17,7 @@ const TodoHeader = ({ onAdd }) => {
 
     {openModal && createPortal(
       <Modal onClose={() => open(false)}>
-        <TodoForm onAdd={onAdd} onClose={() => open(false)}/>
+        <TodoForm actionTitle={'등록'} buttonText={'Add'} onAction={onAdd} onClose={() => open(false)}/>
       </Modal>, document.body
     )}
 
