@@ -1,3 +1,4 @@
+import { useState } from "react"
 import TodoBody from "./components/todos/TodoBody"
 import TodoHeader from "./components/todos/TodoHeader"
 import DefaultLayout from "./layouts/DefaultLayout"
@@ -26,6 +27,26 @@ const dummyTodos = [
 
 function App() {
 
+  // dummyTodos를 App.jsx가 관리하는 하나의 상태로 등록
+  const [todos, setTodos] = useState(dummyTodos); // 초기값은 dummyTodos
+  console.log(todos);
+
+  // 1. 할일 등록 기능
+  // TodoForm으로부터 전달받은 할일 객체를 가지고 todos 배열의 뒤쪽에 추가하는 로직
+  const addTodoHandler = (todo) => {
+    const newTodo = {
+      id: self.crypto.randomUUID(), // ID 식별용 값
+      ...todo
+    }
+
+    // 새롭게 업데이트할 할일 목록 데이터 생성
+    const updatedTodos = [...todos, newTodo]; // ... JS Spread 문법
+    // [{밥먹기}, {음료수}, {물}, {새로운 할일}]; 처럼 추가됨
+
+    // 할일 상태값 갱신
+    setTodos(updatedTodos);
+  }
+
   return (
         <DefaultLayout>
           <header>
@@ -35,11 +56,8 @@ function App() {
                   </h1>
           </header>
           <section className='max-w-xl m-4 mx-auto'>
-            <TodoHeader />
-            
-            {/* dummyTodos라는 데이터를 todos라는 이름으로 전달 */}
-            {/* TodoBody(dummyTodos)형태로 호출 */}
-            <TodoBody todos={dummyTodos}/>
+            <TodoHeader onAdd={addTodoHandler}/>
+            <TodoBody todos={todos}/>
           </section>
         </DefaultLayout>
   )
