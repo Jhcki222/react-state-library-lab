@@ -4,7 +4,7 @@ import { createPortal } from 'react-dom';
 import Modal from '@/components/ui/Modal'
 import TodoForm from './TodoForm';
 
-const TodoHeader = ({ onAdd, category, onFilter }) => {
+const TodoHeader = () => {
   const [openModal, open] = useState(false);
   
   return (
@@ -17,11 +17,11 @@ const TodoHeader = ({ onAdd, category, onFilter }) => {
 
     {openModal && createPortal(
       <Modal onClose={() => open(false)}>
-        <TodoForm actionTitle={'등록'} buttonText={'Add'} onAction={onAdd} onClose={() => open(false)}/>
+        <TodoForm actionTitle={'등록'} buttonText={'Add'} onClose={() => open(false)}/>
       </Modal>, document.body
     )}
 
-    <TodoFilter category={category} onFilter={onFilter} />
+    <TodoFilter />
   </div>
   )
 }

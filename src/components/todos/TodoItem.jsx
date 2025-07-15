@@ -4,11 +4,15 @@ import IconButton from '../ui/IconButton';
 import { createPortal } from 'react-dom';
 import Modal from '@/components/ui/Modal'
 import TodoForm from './TodoForm'
+import { useTodosDispatch } from '../../contexts/TodoContext';
 
-const TodoItem = ({ todo, onUpdate, onDelete }) => {
+const TodoItem = ({ todo }) => {
 
   const [openModal, open] = useState(false);
-  
+
+  // TodoContext에서 상태를 변경할 함수를 불러오기
+  const dispatch = useTodosDispatch();
+
   return (
     <li className="flex gap-4 justify-between my-4 py-4 px-4 border-[1px] bg-gray-700 rounded-md shadow-xl">
         <div>
@@ -20,11 +24,11 @@ const TodoItem = ({ todo, onUpdate, onDelete }) => {
         </div>
         <div className="flex items-center gap-1">
             <IconButton onClick={() => open(true)} icon={'✏️'}/>
-            <IconButton onClick={() => onDelete(todo.id)} icon={'🗑'} />
+            <IconButton onClick={() => dispatch({ type: 'DELETE', id: todo.id })} icon={'🗑'} />
         </div>
         {openModal && createPortal(
           <Modal onClose={() => open(false)}>
-            <TodoForm actionTitle={'수정'} buttonText={'Update'} onAction={onUpdate} onClose={() => open(false)} todo={todo} />
+            <TodoForm actionTitle={'수정'} buttonText={'Update'} onClose={() => open(false)} todo={todo} />
           </Modal>,
           document.body
         )}
