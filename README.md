@@ -33,8 +33,14 @@
 # 본인 GitHub 계정에서 Fork된 레포지토리 주소 사용
 
 git clone https://github.com/your-username/react-state-library-lab.git
+
+<br/>
 cd react-state-library-lab
-✅ 3. 브랜치 생성 후 작업
+
+---
+
+### ✅ 3. 브랜치 생성 후 작업
+
 작업 전, 브랜치를 만들어주세요.
 
 # 브랜치 이름 예시: feature/recoil-username
@@ -42,12 +48,18 @@ cd react-state-library-lab
 git checkout -b feature/context-yourname
 코드 수정, 예제 추가 등 작업을 자유롭게 진행하세요.
 
-✅ 4. 커밋 & 푸시
+---
+
+### ✅ 4. 커밋 & 푸시
 
 git add .
 git commit -m "✨ Context API 실습 추가 by yourname"
 git push origin feature/context-yourname
-✅ 5. Pull Request 생성
+
+---
+
+### ✅ 5. Pull Request 생성
+
 GitHub 본인 레포로 접속
 
 "Compare & pull request" 버튼 클릭
@@ -64,5 +76,8 @@ compare: feature/브랜치명
 
 PR 제목 및 설명 작성 후 제출
 
-✅ 6. PR 리뷰 및 병합
+---
+
+### ✅ 6. PR 리뷰 및 병합
+
 PR이 승인되면 원본 레포지토리에 병합됩니다.
