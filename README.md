@@ -22,10 +22,7 @@
 
 터미널에서 아래 명령어 입력:
 
-# 본인 GitHub 계정에서 Fork된 레포지토리 주소 사용
-
 git clone https://github.com/your-username/react-state-library-lab.git
-
 
 ---
 
