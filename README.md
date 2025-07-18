@@ -12,6 +12,8 @@
 
 ## 👥 협업 가이드: Fork & PR로 참여하기
 
+Fork & PR 가이드 : [text](https://seungwubaek.github.io/tools/git/contributing_using_pull_request/)
+
 이 프로젝트는 원본 레포지토리인 [`Jhcki222/react-state-library-lab`](https://github.com/Jhcki222/react-state-library-lab)에서 관리됩니다.  
 팀원은 Fork → 작업 → PR 방식으로 협업합니다.
 
