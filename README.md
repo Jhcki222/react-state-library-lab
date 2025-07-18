@@ -26,8 +26,6 @@
 
 git clone https://github.com/your-username/react-state-library-lab.git
 
-<br/>
-cd react-state-library-lab
 
 ---
 
@@ -35,9 +33,9 @@ cd react-state-library-lab
 
 작업 전, 브랜치를 만들어주세요.
 
-# 브랜치 이름 예시: feature/recoil-username
+브랜치 이름 예시: git branch feat/recoil
 
-git checkout -b feature/context-yourname
+git checkout -b feat/recoil
 코드 수정, 예제 추가 등 작업을 자유롭게 진행하세요.
 
 ---
@@ -45,26 +43,18 @@ git checkout -b feature/context-yourname
 ### ✅ 3. 커밋 & 푸시
 
 git add .
-git commit -m "✨ Context API 실습 추가 by yourname"
-git push origin feature/context-yourname
+git commit -m "Feat : Context API 실습 추가"
+git push origin feat/recoil
 
 ---
 
 ### ✅ 4. Pull Request 생성
 
-GitHub 본인 레포로 접속
+GitHub 레포지토리 접속
 
 "Compare & pull request" 버튼 클릭
 
 다음 기준으로 PR 작성:
-
-base repository: Jhcki222/react-state-library-lab
-
-base: main
-
-head repository: your-username/react-state-library-lab
-
-compare: feature/브랜치명
 
 PR 제목 및 설명 작성 후 제출
 
