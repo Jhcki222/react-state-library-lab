@@ -61,3 +61,9 @@ Phase1: #1-6. 할일 필터링 기능 구현
 
 (진행 완료) Phase1: #1-7. 독자 기능 구현
 	- 랜덤 4팀 17:00에 발표
+
+Phase2: #2-2. Modal 컴포넌트 개선(NewModal.jsx)
+
+Phase2: #2-1. useReducer + Context API로 리팩토링
+
+Phase3: #3-1. 일부 컴포넌트 children Props로 변경
