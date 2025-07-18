@@ -32,7 +32,7 @@ const TodoForm = ({ actionTitle, onClose, todo }) => {
 
     return (
         <>
-            <h3 className="text-3xl text-red-200">할일 {actionTitle}</h3>
+            <h3 data-cy='todo-form-title' className="text-3xl text-red-200">할일 {actionTitle}</h3>
             <form className='my-2'>
                 <div>
                     <label className='block mb-2 text-xl text-white' htmlFor='title'>Title</label>
@@ -65,7 +65,7 @@ const TodoForm = ({ actionTitle, onClose, todo }) => {
 
                 <div className='flex justify-end gap-4'>
                     <button onClick={onClose} className='text-xl text-white' type='button'>취소</button>
-                    <button onClick={todoActionHandler} className='px-6 py-3 text-xl text-red-200' type='button'>{actionTitle}</button>
+                    <button data-cy='process-add-or-update' onClick={todoActionHandler} className='px-6 py-3 text-xl text-red-200' type='button'>{actionTitle}</button>
                 </div>
             </form>
         </>

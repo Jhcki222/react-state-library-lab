@@ -10,7 +10,7 @@ const TodoItem = ({ todo }) => {
   const dispatch = useTodosDispatch();
 
   return (
-    <li className="flex gap-4 justify-between my-4 py-4 px-4 border-[1px] bg-gray-700 rounded-md shadow-xl">
+    <li data-cy='todo-item' className="flex gap-4 justify-between my-4 py-4 px-4 border-[1px] bg-gray-700 rounded-md shadow-xl">
         <div>
             <span className="text-lg font-medium text-gray-300">{ TODO_CATEGORY_ICON[todo.category] }</span>
             <div>
@@ -27,7 +27,7 @@ const TodoItem = ({ todo }) => {
             <TodoForm actionTitle={'수정'} todo={todo} />
           </NewModal.Dialog>
         </NewModal>
-            <IconButton onClick={() => dispatch({ type: 'DELETE', id: todo.id })} icon={'🗑'} />
+            <IconButton cy={'recycle-bin'} onClick={() => dispatch({ type: 'DELETE', id: todo.id })} icon={'🗑'} />
         </div>
     </li>
   )

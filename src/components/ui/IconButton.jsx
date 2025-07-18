@@ -1,6 +1,6 @@
-const IconButton = ({ icon, onClick }) => {
+const IconButton = ({ cy, icon, onClick }) => {
   return (
-    <button onClick={onClick} className={`w-8 text-xl font-semibold cursor-pointer`}>
+    <button data-cy={cy} onClick={onClick} className={`w-8 text-xl font-semibold cursor-pointer`}>
         {icon}
     </button>
   )

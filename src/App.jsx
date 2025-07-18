@@ -18,7 +18,8 @@ function App() {
         <TodoHeader>
           <NewModal>
             <NewModal.Open>
-              <button className="px-6 py-2 font-semibold text-gray-100 bg-green-500 border-none rounded cursor-pointer">
+              {/* data-cy = cypress 테스트용 식별자 */}
+              <button data-cy='add-todo-button' className="px-6 py-2 font-semibold text-gray-100 bg-green-500 border-none rounded cursor-pointer">
                 Add Todo
               </button>
             </NewModal.Open>
