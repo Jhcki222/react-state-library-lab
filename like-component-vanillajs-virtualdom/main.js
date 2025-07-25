@@ -3,7 +3,7 @@ import { render } from './vdom/render.js';
 import { diff } from './vdom/diff.js';
 import { applyPatch } from './vdom/patch.js';
 
-// ✅ Firebase 설정
+// Firebase 설정
 const firebaseConfig = {
     apiKey: 'YOUR_KEY',
     authDomain: 'YOUR_DOMAIN',
@@ -17,18 +17,18 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.database();
 const likeRef = db.ref('like');
 
-// ✅ 공유 상태
 let likeCount = 0;
 
-// ✅ 컴포넌트 목록 저장
-const components = []; // [{ mountId, $app, oldVNode }, ...]
+//  모든 컴포넌트 저장 (동일한 상태 공유)
+const components = [];
 
+//  버튼 클릭 핸들러 (Firebase에 +1)
 function handleLikeClick() {
-    // console.log('[🔘 Like 버튼] 클릭됨 → Firebase +1');
+    console.log('[🔘 Like 버튼] 클릭됨 → Firebase +1');
     likeRef.transaction((current) => (current || 0) + 1);
 }
 
-// ✅ VNode 생성 함수
+//  좋아요 컴포넌트 VNode 생성
 function createVNode(count) {
     return createElement(
         'div',
@@ -38,7 +38,7 @@ function createVNode(count) {
     );
 }
 
-// ✅ Firebase 실시간 감지 → 모든 컴포넌트 업데이트
+//  Firebase에서 값이 바뀔 때 전체 컴포넌트 리렌더링
 likeRef.on('value', (snapshot) => {
     const newCount = snapshot.val();
     if (newCount == null) {
@@ -46,14 +46,12 @@ likeRef.on('value', (snapshot) => {
         return;
     }
 
-    // 값이 안 바뀌었으면 skip
     if (newCount === likeCount) return;
     likeCount = newCount;
 
     const newVNode = createVNode(likeCount);
-    // console.log(`\n[🔥 Firebase] 전체 컴포넌트 업데이트 (${likeCount})`);
+    console.log(`\n[Firebase] 전체 컴포넌트 업데이트 (${likeCount})`);
 
-    // 모든 컴포넌트 diff & patch
     components.forEach((comp) => {
         if (!comp.$app) {
             comp.oldVNode = newVNode;
@@ -67,7 +65,7 @@ likeRef.on('value', (snapshot) => {
     });
 });
 
-// ✅ 여러 개의 컴포넌트 생성 (모두 같은 상태 공유)
+//  좋아요 컴포넌트 여러 개 생성 (모두 같은 상태 사용)
 const NUM_COMPONENTS = 999;
 for (let i = 0; i < NUM_COMPONENTS; i++) {
     const id = `component-${i}`;
