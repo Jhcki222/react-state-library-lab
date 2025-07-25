@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #f7f7f7;
+    padding: 2rem;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 한 행에 3개 */
+    gap: 2rem;
+    justify-items: center;
+}
+
+.like-card {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem 3rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.like-card button {
+    font-size: 1.2rem;
+    padding: 0.7rem 1.5rem;
+    margin-top: 1rem;
+    background-color: #ff4d4f;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
