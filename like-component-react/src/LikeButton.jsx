@@ -21,7 +21,9 @@ export default function LikeButton() {
 
     return (
         <div className='like-card'>
-            <h2>{count} people liked me 😁</h2>
+            <h2>
+                <span>{count}</span> people liked me 😁
+            </h2>
             <button onClick={handleClick}>❤️ Like</button>
         </div>
     );

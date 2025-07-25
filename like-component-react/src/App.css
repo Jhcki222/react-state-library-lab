@@ -21,6 +21,9 @@ body {
     width: 100%;
     max-width: 290px;
 }
+.like-card span {
+    color: #ff4d4f;
+}
 
 .like-card button {
     font-size: 1.2rem;
