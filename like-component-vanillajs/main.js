@@ -41,7 +41,7 @@ function createLikeCard(id) {
 // ✅ 여러 컴포넌트 렌더링
 const root = document.getElementById('root');
 const likeComponents = [];
-const NUM_COMPONENTS = 6;
+const NUM_COMPONENTS = 999;
 
 for (let i = 0; i < NUM_COMPONENTS; i++) {
     const { card, countText } = createLikeCard(i);

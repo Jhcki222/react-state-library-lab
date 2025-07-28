@@ -68,7 +68,7 @@ export function diff(oldNode, newNode) {
     // 새 노드가 없으면 제거
     if (newNode == null) {
         return ($dom) => {
-            $dom.remove();
+            $dom.remove(); // 기존 DOM 요소 삭제
             return undefined;
         };
     }
@@ -76,8 +76,8 @@ export function diff(oldNode, newNode) {
     // 타입이 다르면 통째로 교체
     if (oldNode?.type !== newNode.type) {
         return ($dom) => {
-            const newDom = render(newNode);
-            $dom.replaceWith(newDom);
+            const newDom = render(newNode); // 새 노드로 생성
+            $dom.replaceWith(newDom); // 기존 DOM 통째로 교체
             return newDom;
         };
     }
@@ -86,11 +86,11 @@ export function diff(oldNode, newNode) {
     if (newNode.type === 'TEXT_ELEMENT') {
         if (oldNode.props.nodeValue !== newNode.props.nodeValue) {
             return ($dom) => {
-                $dom.nodeValue = newNode.props.nodeValue;
+                $dom.nodeValue = newNode.props.nodeValue; // 텍스트 변경
                 return $dom;
             };
         }
-        return ($dom) => $dom; // 변화 없으면 그대로
+        return ($dom) => $dom; // 변화 없으면 그대로 반환
     }
 
     // 일반 노드인 경우: 속성과 자식 비교

@@ -36,3 +36,10 @@ body {
     border-radius: 8px;
     cursor: pointer;
 }
+.like-count {
+    font-weight: bold;
+    color: #ff4d4f;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    display: block; /* 한 줄 단독으로 */
+}

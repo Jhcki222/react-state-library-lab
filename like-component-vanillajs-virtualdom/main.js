@@ -33,7 +33,9 @@ function createVNode(count) {
     return createElement(
         'div',
         { class: 'like-card' },
-        createElement('h2', null, `${count} people liked me 😁`),
+        // span과 h2를 형제 요소로 만든다
+        createElement('span', { class: 'like-count' }, String(count)),
+        createElement('h2', null, 'people liked me 😁'),
         createElement('button', { onClick: handleLikeClick }, '❤️ Like')
     );
 }
@@ -66,7 +68,7 @@ likeRef.on('value', (snapshot) => {
 });
 
 //  좋아요 컴포넌트 여러 개 생성 (모두 같은 상태 사용)
-const NUM_COMPONENTS = 999;
+const NUM_COMPONENTS = 1;
 for (let i = 0; i < NUM_COMPONENTS; i++) {
     const id = `component-${i}`;
     const container = document.createElement('div');

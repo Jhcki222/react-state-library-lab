@@ -1,6 +1,6 @@
-# 🧪 [Woori FIS Academy Frontend Seminar] Virtual DOM vs Real DOM
+# 🧪 [Woori FIS Academy 5th Frontend Seminar] Virtual DOM vs Real DOM
 
-> Vanilla JavaScript로 Virtual DOM을 직접 구현하고, Firebase와 연동하여 실시간 좋아요의 상태 관리를 수행합니다. React의 Virtual DOM 및 HTML 기반 Real DOM과 비교하여 성능과 렌더링 효율성을 실험합니다.
+> Vanilla JavaScript로 Virtual DOM을 직접 구현하고, Firebase와 연동하여 실시간 좋아요의 상태 관리를 수행합니다. 구현한 Virtual DOM, React의 Virtual DOM 및 HTML 기반 Real DOM과 비교하여 성능과 렌더링 효율성을 실험하고 DOM의 작동 원리를 탐구합니다.
 
 ---
 
@@ -8,7 +8,7 @@
 
 -   Virtual DOM이 실제로 어떤 방식으로 작동하는지 직접 구현을 통해 이해합니다.
 -   React와 Vanilla JS 간의 렌더링 차이를 비교해 성능적 이점을 분석합니다.
--   Firebase Realtime Database를 통해 **다수의 컴포넌트가 공유 상태**를 가지는 구조를 실험합니다.
+-   Firebase Realtime Database를 통해 다수의 컴포넌트가 공유 상태를 가지는 구조를 실험합니다.
 -   브라우저의 렌더링 기술이 어떻게 발전해왔는지를 학습합니다.
 
 ---
