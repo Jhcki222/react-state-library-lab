@@ -17,82 +17,40 @@
 
 | 구현 방식                              | 설명                                                                |
 | -------------------------------------- | ------------------------------------------------------------------- |
-| ✅ like-component-vanillajs-virtualdom | 가상 DOM을 직접 구현하고 `diff → patch`를 통해 좋아요 컴포넌트 조작 |
-| ✅ like-component-vanillajs            | VanillaJS 및 HTML로 Real DOM을 통한 좋아요 컴포넌트 구현            |
-| ✅ like-component-react                | React로 좋아요 컴포넌트 구현                                        |
+| 1. like-component-vanillajs-virtualdom | 가상 DOM을 직접 구현하고 `diff → patch`를 통해 좋아요 컴포넌트 조작 |
+| 2. like-component-vanillajs            | VanillaJS 및 HTML로 Real DOM을 통한 좋아요 컴포넌트 구현            |
+| 3. like-component-react                | React로 좋아요 컴포넌트 구현                                        |
 
 ---
 
-## 👥 협업 가이드: Fork & PR로 참여하기
+## 🛠️ 코드 실행 방법 안내
 
-[Fork & PR 가이드](https://seungwubaek.github.io/tools/git/contributing_using_pull_request/)
+### 1. like-component-vanillajs-virtualdom
 
-이 프로젝트는 원본 레포지토리인 [`Jhcki222/react-state-library-lab`](https://github.com/Jhcki222/react-state-library-lab)에서 관리됩니다.  
-팀원은 Fork → 작업 → PR 방식으로 협업합니다.
+가상 DOM을 직접 구현하여 diff → patch 방식으로 좋아요 숫자가 존재하는 `<span>` 요소만 변경하는 최적화 실습
 
----
+```
+cd like-component-vanillajs-virtualdom
+npx live-server
+```
 
-### ✅ 1. 레포지토리 Fork
+### 2. like-component-vanillajs
 
-1. 아래 원본 레포지토리 접속  
-   👉 https://github.com/Jhcki222/react-state-library-lab
-2. 우측 상단의 ⭐ `Fork` 버튼 클릭
-3. 본인 GitHub 계정으로 Fork된 복제본 생성
+일반적인 HTML + JavaScript (Vanilla JS) 방식으로 구성된 좋아요 컴포넌트
 
----
+```
+cd like-component-vanillajs
+npx live-server
+```
 
-### ✅ 2. 로컬에 클론
+### 3. like-component-react
 
-터미널에서 아래 명령어 입력:
+React를 활용하여 좋아요 컴포넌트를 작성
 
-# 본인 GitHub 계정에서 Fork된 레포지토리 주소 사용
+```
+cd like-component-react
+npm install
+cp .env.example .env
+npm run dev
 
-git clone https://github.com/your-username/react-state-library-lab.git
-
-<br/>
-cd react-state-library-lab
-
----
-
-### ✅ 3. 브랜치 생성 후 작업
-
-작업 전, 브랜치를 만들어주세요.
-
-# 브랜치 이름 예시: feature/recoil-username
-
-git checkout -b feature/context-yourname
-코드 수정, 예제 추가 등 작업을 자유롭게 진행하세요.
-
----
-
-### ✅ 4. 커밋 & 푸시
-
-git add .
-git commit -m "✨ Context API 실습 추가 by yourname"
-git push origin feature/context-yourname
-
----
-
-### ✅ 5. Pull Request 생성
-
-GitHub 본인 레포로 접속
-
-"Compare & pull request" 버튼 클릭
-
-다음 기준으로 PR 작성:
-
-base repository: Jhcki222/react-state-library-lab
-
-base: main
-
-head repository: your-username/react-state-library-lab
-
-compare: feature/브랜치명
-
-PR 제목 및 설명 작성 후 제출
-
----
-
-### ✅ 6. PR 리뷰 및 병합
-
-PR이 승인되면 원본 레포지토리에 병합됩니다.
+```
