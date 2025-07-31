@@ -64,7 +64,11 @@ npm run dev
 ---
 
 ## 🖥️ 구현 화면 : Like Count 모듈
-복잡한 모듈은 오히려 테스팅에 영향을 준다고 생각하여 간단한 좋아요 카운팅 모듈을 구현해보았습니다. 
+
+복잡한 모듈은 오히려 테스팅 환경 통제에 영향을 준다고 생각하여 간단한 좋아요 카운팅 모듈을 구현
+
+<br/>
+
 <img width="800" height="500" alt="스크린샷 2025-07-28 190029" src="https://github.com/user-attachments/assets/62a2a8cb-77b7-485e-8d3e-dcfba5971088" />
 
 ---
