@@ -90,7 +90,7 @@ npm run dev
 
 ## ⚙️ Virtual DOM 동작 과정
 
-구현한 Virtual DOM은 일반적으로 다음과 같은 흐름으로 작동합니다:
+구현한 Virtual DOM은 일반적으로 다음과 같은 흐름으로 작동
 
 <br/>
 
@@ -118,7 +118,7 @@ npm run dev
 ---
 
 ## 📂 코드 구조
-- HTML의 구조로 VNode를 생성 -> 트리 생성 -> diffing알고리즘을 통한 재귀적 노드 변경 감지 -> 해당 노드 patch의 과정
+
 ### Virtual DOM 핵심 파일
 
 | 파일명            | 설명                                      |
@@ -146,34 +146,73 @@ npm run dev
 
 
 
+
 ---
 
 ### 1️⃣ **React**
 
-| 1 |  2 |  3 |
-|-------|-------|-------|
+| 1 | 2 | 3 |
+|---|---|---|
 | <img src="https://github.com/user-attachments/assets/df88b146-d33a-477b-b6c8-731d5d6cce1f" width="300"/> | <img src="https://github.com/user-attachments/assets/4f8e4636-3f65-4e5e-bb2e-a914235aa8ec" width="300"/> | <img src="https://github.com/user-attachments/assets/19d5c097-d4b6-4ffb-87aa-fc298b170391" width="300"/> |
 
 ---
 
 ### 2️⃣ **Vanilla JS + Virtual DOM**
 
-|  1 |  2 |  3 |
-|-------|-------|-------|
-| <img src="https://github.com/user-attachments/assets/70e29607-53c1-4499-ac16-a697800c3fda" width="300"/> | <img src="https://github.com/user-attachments/assets/0a7ac7ea-14f8-4374-b3c7-e6deee65d773" width="300"/> | <img src="https://github.com/user-attachments/assets/cb758d7c-9838-4c20-a85c-02c935be5a36" width="300"/> |
+| 1 | 2 | 3 |
+|---|---|---|
+| <img src="https://github.com/user-attachments/assets/70e29607-53c1-4499-ac16-a697800c3fda" width="300"/> | <img src="https://github.com/user-attachments/assets/40f4452c-e3fb-4bcf-b695-4a0e89e33256" width="300"/> | <img src="https://github.com/user-attachments/assets/cb758d7c-9838-4c20-a85c-02c935be5a36" width="300"/> |
 
 ---
 
 ### 3️⃣ **Vanilla JS (Real DOM)**
 
-|  1 |  2 |  3 |
-|-------|-------|-------|
-| <img src="https://github.com/user-attachments/assets/875dcb46-c4f1-446c-9b5f-8e969dd0bb27" width="300"/> | <img src="https://github.com/user-attachments/assets/3f8a0823-6a76-40d8-bfe3-e993de66625b" width="300"/> | <img src="https://github.com/user-attachments/assets/4bbb5907-471a-4f65-a9d2-e410dd44af69" width="300"/> |
-
+| 1 | 2 | 3 |
+|---|---|---|
+| <img src="https://github.com/user-attachments/assets/875dcb46-c4f1-446c-9b5f-8e969dd0bb27" width="300"/> | <img src="https://github.com/user-attachments/assets/a3fd8794-17ca-454a-b082-7d71741c89c8" width="300"/> | <img src="https://github.com/user-attachments/assets/4bbb5907-471a-4f65-a9d2-e410dd44af69" width="300"/> |
 
 ---
 
+
+
 ## 📊 결과 분석
+
+### 💡Lighthouse 성능 비교 결과
+ 
+*(테스트 환경: Chrome 138, 환경 동일 조건)*
+
+
+### 1️⃣ **종합 점수(평균값)**
+
+| 지표 (점수)              | React | VanillaJS (Virtual DOM) | VanillaJS (Real DOM) |
+|--------------------------|-------|-------------------------|----------------------|
+| **Performance**          | 88    | 98                      | 99                   |
+| **Accessibility**        | 90    | 88                      | 88                   |
+| **Best Practices**       | 100   | 93                      | 93                  |
+| **SEO**                  | 82    | 90                      | 100                   |
+
+
+### 2️⃣ **세부 성능 지표(평균값)**
+
+| 지표 (측정값)                      | React   | VanillaJS (Virtual DOM) | VanillaJS (Real DOM) |
+|-----------------------------------|---------|-------------------------|----------------------|
+| **First Contentful Paint (FCP)**  | 1.1s    | 0.7s                    | 0.6s                 |
+| **Largest Contentful Paint (LCP)**| 1.8s    | 0.8s                    | 0.7s                 |
+| **Total Blocking Time (TBT)**     | 140ms   | 60ms                    | 55ms                 |
+| **Cumulative Layout Shift (CLS)** | 0.001   | 0.001                   | 0.001                |
+| **Speed Index (SI)**              | 1.1s    | 0.7s                    | 0.7s                 |
+
+---
+
+### ✅ 결과 분석
+
+- **Vanilla JS 기반 모듈**이 React보다 **빠른 초기 로딩 속도**와 **낮은 TBT**을 보임.
+- React는 **JS 파싱 및 번들 로딩 시간** 때문에 TTI와 TBT가 상대적으로 느림.
+- Virtual DOM 사용 시 Real DOM 대비 **큰 차이는 없지만**, DOM 업데이트를 최소화하여 CPU 연산 부담을 줄이는 효과가 있음.
+
+---
+
+### 🪫Chrome DevTools Performance 성능 비교 결과
 
 ### 1️⃣ 총 소요시간(평균값)
 
