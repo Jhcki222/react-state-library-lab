@@ -137,6 +137,10 @@ npm run dev
 **LightHouse와 Developer Tools Performance로 웹 성능과 렌더링 성능 측정**  
 동일한 모듈 수, 환경과 브라우저, DB를 연결하여 최대한 변인을 통제
 
+
+https://github.com/user-attachments/assets/000d836c-30b9-4643-b9a0-81fc88d1aadb
+
+
 ---
 
 ### 1️⃣ **React**
@@ -192,7 +196,7 @@ npm run dev
 - **VanillaJS**: 약 **80ms**
 - **JS Virtual DOM**: 약 **50ms**
 
-> ⚡ **diff 알고리즘으로 바뀐 node만 계산 → 미약하지만 실제로 렌더링 시간 감소에 도움이 된다는 결론**
+> ⚡ **diff 알고리즘으로 바뀐 node만 계산 → 미비하지만 실제로 렌더링 시간 감소에 도움이 된다는 결론**
 
 ### 📈Graph
 <img width="800" height="700" alt="Performance결과그래프" src="https://github.com/user-attachments/assets/4fcdd72c-61a2-4e93-959b-bcf367c92892" />
