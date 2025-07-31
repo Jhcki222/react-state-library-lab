@@ -255,4 +255,16 @@ npm run dev
 - 다만, Virtual DOM이 어떻게 구성되고 작동하는지 코드와 결과값으로 직접 체감할 수 있었으며, **프로젝트의 규모에 따라 적절히 JS와 Framework/Library를 선택하는 능력이 중요하다고 생각.**
 
 ---
-## 🏆[Woori FIS Academy 5th Cloud Service : Frontend Seminar] 2등
+
+## 📚 참고 자료
+
+- [React 공식 문서 - Reconciliation](https://ko.legacy.reactjs.org/docs/reconciliation.html#gatsby-focus-wrapper)
+- [DOM vs Virtual DOM (Velog)](https://velog.io/@ye-ji/DOM-vs-Virtual-DOM)
+- [DOM과 JavaScript (CodeStates Blog)](https://www.codestates.com/blog/content/dom-javascript)
+- [DOM 뽀개기 (Naver D2)](https://d2.naver.com/helloworld/59361)
+- [MDN - Document Object Model 소개](https://developer.mozilla.org/ko/docs/Web/API/Document_Object_Model/Introduction#dom_%EC%9D%B4%EB%9E%80)
+- [Vanilla JS와 Virtual DOM 비교 (Tistory)](https://junhee1203.tistory.com/17)
+
+---
+## [Woori FIS Academy 5th Cloud Service : Frontend Seminar] 
+**Virtual DOM의 동작원리와 이해** : Vanilla JS를 활용한 VDOM 구현
