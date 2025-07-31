@@ -3,13 +3,15 @@
 > Vanilla JavaScript로 Virtual DOM을 직접 구현하고, Firebase와 연동하여 실시간으로 좋아요의 갯수의 렌더링 변화를 관찰합니다. 구현한 JS Virtual DOM, React의 Virtual DOM 및 JS Real DOM과 비교하여 성능과 렌더링 성능을 실험하고 DOM의 작동 원리를 탐구합니다.
 
 
+<br/>
+
 ## 🎯 프로젝트 목적
 -   DOM과 VirtualDOM의 원리를 학습합니다.
 -   Virtual DOM이 실제로 어떤 방식으로 작동하는지 직접 구현을 통해 이해합니다.
 -   React와 Vanilla JS 간의 웹 성능 차이를 비교해 결과를 분석합니다.
 -   브라우저 엔진이 어떻게 발전해왔는지를 학습합니다.
 
----
+<br/>
 
 ## 🔧 디렉토리 설명
 
@@ -19,17 +21,17 @@
 | 2. like-component-vanillajs            | VanillaJS 및 HTML/CSS로 Real DOM의 성능 측정을 위한 Like Conunt Module            |
 | 3. like-component-react                | React로 구현한 Like Conunt Component                                    |
 
----
+<br/>
 
 ## 🛠️ 코드 실행 방법 안내
 
-### 0. 프로젝트 Clone
+### 1️⃣ 프로젝트 Clone
 
 ```
 git clone https://github.com/woorifisa-service-dev-5th/tech-seminar-vanillajs-vdom.git
 ```
 
-### 1. like-component-vanillajs-virtualdom
+### 2️⃣ like-component-vanillajs-virtualdom
 
 가상 DOM을 직접 구현하여 diff → patch 방식으로 좋아요 숫자가 존재하는 `<span>` 요소만 변경하는 최적화 실습
 
@@ -38,7 +40,7 @@ cd like-component-vanillajs-virtualdom
 npx live-server
 ```
 
-### 2. like-component-vanillajs
+### 3️⃣ like-component-vanillajs
 
 일반적인 Vanilla JS 방식으로 구성된 좋아요 컴포넌트
 
@@ -47,7 +49,7 @@ cd like-component-vanillajs
 npx live-server
 ```
 
-### 3. like-component-react
+### 4️⃣ like-component-react
 
 React를 활용하여 좋아요 컴포넌트를 작성
 
@@ -58,7 +60,9 @@ cp .env.example .env
 npm run dev
 ```
 
+
 ---
+
 ## 🖥️ 구현 화면 : Like Count 모듈
 복잡한 모듈은 오히려 테스팅에 영향을 준다고 생각하여 간단한 좋아요 카운팅 모듈을 구현해보았습니다. 
 <img width="800" height="500" alt="스크린샷 2025-07-28 190029" src="https://github.com/user-attachments/assets/62a2a8cb-77b7-485e-8d3e-dcfba5971088" />
@@ -72,17 +76,19 @@ npm run dev
 |-------|-------|
 | <img src="https://github.com/user-attachments/assets/ebe1f26a-0a09-435a-bc26-aaa30591d096" alt="스크린샷 2025-07-28 100216" width="500" /> | <img src="https://github.com/user-attachments/assets/7f0f81ed-6e82-484f-af15-3ea592ba8dea" alt="스크린샷 2025-07-28 101221" width="550" height = "700" /> |
 
-               
+       
 
 
 - 좋아요 버튼 클릭 시, 콘솔에서 가상 DOM이 이전 노드와 새로운 노드를 비교하는 과정을 로그로 출력하였습니다. 
 - 각 노드는 `{type : <tag type> , props : {children:nodeValue }}`의 형식으로 존재하며 이는 각각 JS의 객체라 할 수 있습니다.
 
+---
+
 ## ⚙️ Virtual DOM 동작 과정
 
 구현한 Virtual DOM은 일반적으로 다음과 같은 흐름으로 작동합니다:
 
----
+<br/>
 
 ### 1️⃣ 이벤트 발생 (버튼 클릭)
 - 사용자가 버튼을 클릭하면 **이벤트 핸들러**가 실행됩니다.
@@ -164,7 +170,9 @@ npm run dev
 | **VanillaJS**            | 약 **780ms**  | 순수 DOM 조작만 있으므로 최소한의 JS만 실행.                         |
 | **VanillaJS Virtual DOM**| 약 **710ms**  | Real DOM Vanilla JS와 근소한 차이 |
 
-### 1️⃣ Scripting(평균값)
+<br/>
+
+### 2️⃣ Scripting(평균값)
 
 | 모듈                     | 실행 시간  | 설명                                                                 |
 |--------------------------|-----------|----------------------------------------------------------------------|
@@ -172,9 +180,9 @@ npm run dev
 | **VanillaJS**            | 약 **50ms**  | 직접적인 DOM 조작만 있으므로 최소한의 JS만 실행, 코드의 양이 절대적으로 적음                         |
 | **VanillaJS Virtual DOM**| 약 **70ms**  | diff, patch 로직 포함 → Vanilla보다 약간 높지만 여전히 빠른 실행시간. |
 
----
+<br/>
 
-### 2️⃣ Rendering/Paint (평균값)
+### 3️⃣ Rendering/Paint (평균값)
 
 - **React**: 약 **70ms**
 - **VanillaJS**: 약 **80ms**
@@ -183,7 +191,7 @@ npm run dev
 > ⚡ **diff 알고리즘으로 바뀐 node만 계산 → 미약하지만 실제로 렌더링 시간 감소에 도움이 된다는 결론**
 
 ### 📈Graph
-<img width="1000" height="700" alt="Performance결과그래프" src="https://github.com/user-attachments/assets/4fcdd72c-61a2-4e93-959b-bcf367c92892" />
+<img width="800" height="700" alt="Performance결과그래프" src="https://github.com/user-attachments/assets/4fcdd72c-61a2-4e93-959b-bcf367c92892" />
 
 ---
 
@@ -193,5 +201,6 @@ npm run dev
 - 결국 **DOM 엔진의 고도화, 고성능 DOM API의 등장 그리고 하드웨어 성능의 비약적인 향상**이 React보다 Vanilla JS의 성능이 높은데 기여했다고 생각.<br/>
 - React는 부가적인 라이브러리 코드와 상태 관리 로직/훅으로 JS 실행 시간 당연히 늘어날 수 있음.<br/>
 - 다만, Virtual DOM이 어떻게 구성되고 작동하는지 코드와 결과값으로 직접 체감할 수 있었으며, **프로젝트의 규모에 따라 적절히 JS와 Framework/Library를 선택하는 능력이 중요하다고 생각.**
+
 ---
 ## 🏆[Woori FIS Academy 5th Cloud Service : Frontend Seminar] 2등
