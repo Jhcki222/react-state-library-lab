@@ -68,7 +68,7 @@ likeRef.on('value', (snapshot) => {
 });
 
 //  좋아요 컴포넌트 여러 개 생성 (모두 같은 상태 사용)
-const NUM_COMPONENTS = 1;
+const NUM_COMPONENTS = 100;
 for (let i = 0; i < NUM_COMPONENTS; i++) {
     const id = `component-${i}`;
     const container = document.createElement('div');
