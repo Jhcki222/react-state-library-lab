@@ -138,7 +138,12 @@ npm run dev
 동일한 모듈 수, 환경과 브라우저, DB를 연결하여 최대한 변인을 통제
 
 
-https://github.com/user-attachments/assets/000d836c-30b9-4643-b9a0-81fc88d1aadb
+
+![demo움짤](https://github.com/user-attachments/assets/ed8c35e2-a7b0-477b-8f7c-bc683a541c99)
+
+
+
+
 
 
 ---
