@@ -33,7 +33,7 @@ git clone https://github.com/woorifisa-service-dev-5th/tech-seminar-vanillajs-vd
 
 ### 2️⃣ like-component-vanillajs-virtualdom
 
-가상 DOM을 직접 구현하여 diff → patch 방식으로 좋아요 숫자가 존재하는 `<span>` 요소만 변경하는 최적화 실습
+가상 DOM을 적용한 좋아요 모듈을 직접 구현하여 diff → patch 방식으로 좋아요 숫자가 존재하는 node의 요소만 변경하는 실습
 
 ```
 cd like-component-vanillajs-virtualdom
@@ -42,7 +42,7 @@ npx live-server
 
 ### 3️⃣ like-component-vanillajs
 
-일반적인 Vanilla JS 방식으로 구성된 좋아요 컴포넌트
+비교 테스트를 위한 일반적인 Vanilla JS 방식으로 구성된 좋아요 모듈
 
 ```
 cd like-component-vanillajs
@@ -51,7 +51,7 @@ npx live-server
 
 ### 4️⃣ like-component-react
 
-React를 활용하여 좋아요 컴포넌트를 작성
+비교 테스트를 위한 React.js를 활용하여 구성된 좋아요 컴포넌트
 
 ```
 cd like-component-react
